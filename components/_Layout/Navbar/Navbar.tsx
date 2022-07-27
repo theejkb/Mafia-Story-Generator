@@ -11,7 +11,7 @@ type NavbarProps = {
   //
 };
 
-const navigation = [];
+// const navigation = [];
 
 const Navbar: React.FC<NavbarProps> = () => {
   const router = useRouter();
@@ -74,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             </div>
           </Container>
 
-          <Disclosure.Panel className="sm:hidden">
+          {/* <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <Disclosure.Button key={item.name} as="div">
@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 </Disclosure.Button>
               ))}
             </div>
-          </Disclosure.Panel>
+          </Disclosure.Panel> */}
         </>
       )}
     </Disclosure>
