@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     alt="Workflow"
                   />
                 </div>
-                <div className="hidden sm:block sm:ml-6">
+                {/* <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <Link href={item.href} key={item.name}>
@@ -69,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                       </Link>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </Container>
