@@ -24,18 +24,19 @@ const Screenshot = ({ children }) => {
             return dataURI;
         };
 
-        return ( <
-            div >
-            <
-            div ref = { ref } > { children } < /div> <
-            div className = "text-center mb-4 mt-5" > { < button
-                onClick = { downloadScreenshot }
-                className = "px-2 py-1 rounded bg-red-500 text-white" >
-                Download the image <
-                /button> } < /
-                div > <
-                /div>
-            );
+        return (
+            <div>
+              <div ref={ref}>{children}</div>
+              <div className="text-center mb-4 mt-5">
+                { <button
+                  onClick={downloadScreenshot}
+                  className="px-2 py-1 rounded bg-red-500 text-white"
+                >
+                  Download image
+                </button> }
+              </div>
+            </div>
+          );
         };
 
         Screenshot.propTypes = {
