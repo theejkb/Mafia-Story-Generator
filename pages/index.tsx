@@ -63,6 +63,11 @@ const Home: NextPage = () => {
         <title>Mobsters Story - Elrond Mafia</title>
         <meta name="description" content="Mobster Story Generator" />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="/assets/img/Mobsters_Story.png"/>
+        <meta property="og:title" content="Mobsters Story"/>
+        <meta property="og:description" content="An application to create your own Elrond Mafia Story."/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
       </Head>
 
       <Container>
