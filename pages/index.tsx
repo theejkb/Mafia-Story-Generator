@@ -60,7 +60,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Mafia - Mobster's Talk</title>
+        <title>Mafia - Mobsters Talk</title>
         <meta name="description" content="Mobster Story Generator" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
