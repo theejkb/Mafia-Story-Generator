@@ -18,8 +18,8 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
           <img className="rounded md:max-h-96" src={nft.url}></img>
         </div>
         <div className="flex flex-col h-full w-4/5 mt-5">
-            <input placeholder="Voster" className="text-center block font-bold text-5xl w-full mb-5" style={{ color: primaryColor }}></input>
-          <textarea placeholder="This is the boss. Don't mess with him." className="block tracking-wide font-bold text-2xl w-full h-80 text-left"  style={{ color: secondaryColor }}></textarea>
+            <input placeholder="Gaspipe" className="text-center block font-bold text-5xl w-full mb-5" style={{ color: primaryColor }}></input>
+          <textarea placeholder="Click to enter his history, here" className="block tracking-wide font-bold text-2xl w-full h-80 text-left"  style={{ color: secondaryColor }}></textarea>
         </div>
       </div>
     </div>
