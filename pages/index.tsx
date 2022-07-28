@@ -74,7 +74,6 @@ const Home: NextPage = () => {
               <div className="col-span-1">
                 <div className="flex justify-center mb-5">
                   <div className="flex flex-row justify-around w-full items-start gap-4">
-                    <p className='block text-3xl sm:text-4xl tracking-wide	 leading-none font-extrabold tracking-tight text-center text-white'> <span className='text-red-500'>Mobsters</span> Talk</p>
                     <form onSubmit={handleSubmitApez}>
                       <label className="block text-white text-center ">Search by Id</label>
                       <input
