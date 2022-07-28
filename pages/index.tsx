@@ -60,7 +60,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Mafia - Mobster Generator</title>
+        <title>Mafia - Mobster's Talk</title>
         <meta name="description" content="Mobster Story Generator" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -68,7 +68,8 @@ const Home: NextPage = () => {
       <Container>
         {selectedMafia ? (
           <div className='my-8'>
-            <p className='block text-3xl sm:text-4xl leading-none font-extrabold tracking-tight text-center mb-10 text-white'>Generate your <span className='text-red-500'>Mobster</span> story</p>
+            <p className='block text-3xl sm:text-4xl tracking-wide	 leading-none font-extrabold tracking-tight text-center mb-10 text-white'>Generate your <span className='text-red-500'>Mobster</span> story</p>
+            <p className='block text-3xl sm:text-2xl tracking-normal leading-none font-extrabold tracking-tight text-center mb-10 text-white'>Edit him name. Edit his story. Share with the community.</p>
             <div className="grid grid-cols-1">
               <div className="col-span-1">
                 <div className="flex justify-center mb-5">
