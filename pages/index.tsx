@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 
   const ref = createRef();
 
-  const fetchDaApez = () => {
+  const fetchMafia = () => {
     fetch(
       `https://api.elrond.com/collections/MAFIA-bd0abc/nfts?name=${selectedMafiaId}&withOwner=true`,
       {
@@ -47,13 +47,13 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    fetchDaApez();
+    fetchMafia();
   }, []);
 
-  const handleSubmitApez = (e: React.FormEvent) => {
+  const handleSubmitMafia = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    fetchDaApez();
+    fetchMafia();
   };
 
  
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
               <div className="col-span-1">
                 <div className="flex justify-center mb-5">
                   <div className="flex flex-row justify-around w-full items-start gap-4">
-                    <form onSubmit={handleSubmitApez}>
+                    <form onSubmit={handleSubmitMafia}>
                       <label className="block text-white text-center ">Search by Id</label>
                       <input
                         className="px-2 py-1 rounded-l outline-none bg-white"
