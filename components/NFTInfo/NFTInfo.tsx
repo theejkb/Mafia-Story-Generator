@@ -15,7 +15,7 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
     <div className="rounded" style={{ backgroundColor: backgroundColor }}>
       <div className="flex flex-start md:flex-row flex-col h-full p-2 items-center">
         <div className="col-span-12 md:col-span-6 flex items-center mr-10 ml-10">
-          <img className="rounded md:max-h-96" src={nft.url}></img>
+          <img className="rounded md:max-h-96" src={nft.media[0]?.originalUrl ?? nft.url}></img>
         </div>
         <div className="flex flex-col h-full w-4/5 mt-5">
             <input placeholder="Gaspipe" className="text-center block font-bold text-5xl w-full mb-5" style={{ color: primaryColor }}></input>
