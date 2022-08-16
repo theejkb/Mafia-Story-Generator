@@ -1,8 +1,7 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { NFT } from '../../types';
-import { useEditor } from '../../hooks/useEditor';
 import Image from 'next/image';
+import * as React from 'react';
+import { useEditor } from '../../hooks/useEditor';
+import { NFT } from '../../types';
 
 type NFTInfoProps = {
   nft: NFT;
@@ -11,20 +10,43 @@ type NFTInfoProps = {
 const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
   const { backgroundColor, primaryColor, secondaryColor } = useEditor();
   const myLoader = () => {
-    return `${nft.media[0]?.thumbnailUrl}`;
+    return `${nft.url}`;
   };
-  console.log(nft);
+
+  const nftOwner = nft.owner.split('');
+  const nftOwnerReduced =
+    nftOwner[0] +
+    nftOwner[1] +
+    nftOwner[2] +
+    nftOwner[3] +
+    '...' +
+    nftOwner[57] +
+    nftOwner[58] +
+    nftOwner[59] +
+    nftOwner[60] +
+    nftOwner[61];
 
   return (
-    <div className="rounded" style={{ backgroundColor: backgroundColor }}>
-      <div className="flex flex-start lg:flex-row flex-col h-full p-10 items-center">
-        <div className="col-span-12 lg:col-span-6 flex items-center min-w-fit">
+    <div
+      className="rounded relative"
+      style={{ backgroundColor: backgroundColor }}
+    >
+      <div
+        className="pt-5 flex justify-evenly"
+        style={{ color: secondaryColor }}
+      >
+        <span className="">{nft.name}</span>
+        <span>Owner : {nftOwnerReduced}</span>
+      </div>
+      <div className="flex flex-start lg:flex-row flex-col h-full p-10 pt-5 items-center">
+        <div className="col-span-12 flex-col lg:col-span-6 flex items-center min-w-fit">
           <Image
             loader={myLoader}
             alt="Mobsters Image"
             width={400}
             height={400}
             src={nft.media[0].originalUrl}
+            className="rounded-md"
             priority
             unoptimized
           />
