@@ -29,7 +29,7 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
             unoptimized
           />
         </div>
-        <div className="flex flex-col h-full pl-10 pr-10 pt-10 w-full lg:pt-0">
+        <div className="flex flex-col h-full lg:pl-10 lg:pr-10 pt-5 w-full lg:pt-0">
           <input
             placeholder="Enter his name"
             className="text-center block font-bold text-5xl border border-gray-900 hover:border-white w-full ease-in duration-300 mb-5 rounded-md hover:border-1 hover:border-gray-50"
