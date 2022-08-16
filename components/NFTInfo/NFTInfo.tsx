@@ -2,34 +2,42 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { NFT } from '../../types';
 import { useEditor } from '../../hooks/useEditor';
+import Image from 'next/image';
 
 type NFTInfoProps = {
   nft: NFT;
 };
 
 const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
-  console.log(nft);
-
   const { backgroundColor, primaryColor, secondaryColor } = useEditor();
+  const myLoader = () => {
+    return `${nft.media[0]?.originalUrl}`;
+  };
+  console.log(nft);
 
   return (
     <div className="rounded" style={{ backgroundColor: backgroundColor }}>
-      <div className="flex flex-start md:flex-row flex-col h-full p-5 items-center">
-        <div className="col-span-12 md:col-span-6 flex items-center mr-10 ml-10">
-          <img
-            className="rounded md:max-h-96"
-            src={nft.media[0]?.originalUrl}
-          ></img>
+      <div className="flex flex-start lg:flex-row flex-col h-full p-10 items-center">
+        <div className="col-span-12 lg:col-span-6 flex items-center min-w-fit">
+          <Image
+            loader={myLoader}
+            alt="Mobsters Image"
+            width={400}
+            height={400}
+            src={nft.media[0].originalUrl}
+            priority
+            unoptimized
+          />
         </div>
-        <div className="flex flex-col h-full w-4/5 mt-5 md:pt-10">
+        <div className="flex flex-col h-full pl-10 pr-10 pt-10 w-full lg:pt-0">
           <input
             placeholder="Enter his name"
-            className="text-center block font-bold text-5xl w-full mb-5"
+            className="text-center block font-bold text-5xl border border-gray-900 hover:border-white w-full ease-in duration-300 mb-5 rounded-md hover:border-1 hover:border-gray-50"
             style={{ color: primaryColor }}
           ></input>
           <textarea
             placeholder="Enter his story"
-            className="block tracking-wide font-bold text-2xl w-full h-80 text-left"
+            className="block tracking-wide border-2 border-gray-900 font-bold text-2xl w-full ease-in duration-300 h-80 text-left rounded-md hover:border-1 hover:border-gray-50"
             style={{ color: secondaryColor }}
           ></textarea>
         </div>
