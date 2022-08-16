@@ -11,7 +11,7 @@ type NFTInfoProps = {
 const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
   const { backgroundColor, primaryColor, secondaryColor } = useEditor();
   const myLoader = () => {
-    return `${nft.media[0]?.originalUrl}`;
+    return `${nft.media[0]?.thumbnailUrl}`;
   };
   console.log(nft);
 
