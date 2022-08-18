@@ -13,6 +13,7 @@ module.exports = {
       indigo: colors.indigo,
       red: {
         500: "#d7350d",
+        400: "#7a1800"
       },
       yellow: {
         100: "#ffe9d7",

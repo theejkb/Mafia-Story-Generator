@@ -6,4 +6,15 @@
 input,
 textarea {
     background-color: transparent;
+    border          : transparent;
+}
+
+
+.homeParticles {
+    z-index       : 1;
+    min-width     : 98vw;
+    min-height    : 100vh;
+    object-fit    : cover;
+    mix-blend-mode: screen;
+    position      : absolute;
 }
