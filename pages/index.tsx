@@ -10,6 +10,7 @@ import Select from 'react-select';
 import Hat from '../public/assets/img/hat_fp.png';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Background } from '../components/NFTInfo/NFTInfo';
 
 const Home: NextPage = () => {
   const {
@@ -115,6 +116,7 @@ const Home: NextPage = () => {
                         {loading ? 'Loading...' : 'Search'}
                       </button>
                     </form>
+                    <Background />
                   </div>
                 </div>
                 <div>

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import * as React from 'react';
 import { useEditor } from '../../hooks/useEditor';
 import { NFT } from '../../types';
+import { useState } from 'react';
 
 type NFTInfoProps = {
   nft: NFT;
@@ -12,6 +13,7 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
   const myLoader = () => {
     return `${nft.url}`;
   };
+  console.log(nft);
 
   const nftOwner = nft.owner.split('');
   const nftOwnerReduced =
@@ -28,13 +30,15 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
 
   return (
     <div className="rounded overflow-hidden	relative bg-gradient-to-r from-primary-700 to-primary-800">
-      <img
-        alt="background bloody"
-        src="/assets/img/pattern-blood.png"
-        width="100%"
-        height="100%"
-        className="absolute z-10 img-bloody"
-      />
+      {background === 'blood' && (
+        <img
+          alt="background bloody"
+          src="/assets/img/pattern-blood.png"
+          width="100%"
+          height="100%"
+          className="absolute z-10 img-bloody"
+        />
+      )}
       <div
         className="pt-5 z-10 flex justify-evenly"
         style={{ color: secondaryColor }}
@@ -49,7 +53,7 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
             alt="Mobsters Image"
             width={400}
             height={400}
-            src={nft.media[0].originalUrl}
+            src={nft.url}
             className="rounded-md z-20"
             priority
             unoptimized
@@ -71,9 +75,26 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
     </div>
   );
 };
-
-NFTInfo.propTypes = {
-  //
-};
-
 export default NFTInfo;
+
+export const Background = () => {
+  const [background, setBackground] = useState('none');
+
+  const setBg = (event) => {
+    setBackground(event?.target?.value);
+  };
+
+  return (
+    <div onChange={(event) => setBg(event)}>
+      <input
+        className="text-white"
+        type="radio"
+        value="none"
+        defaultChecked
+        name="background"
+      />{' '}
+      None
+      <input type="radio" value="blood" name="background" /> Bloody
+    </div>
+  );
+};
