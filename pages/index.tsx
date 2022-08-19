@@ -86,7 +86,7 @@ const Home: NextPage = () => {
       <Container>
         {selectedMafia ? (
           <div className="my-8 z-10 relative">
-            <h1 className="block text-5xl  tracking-wide	 leading-none font-extrabold tracking-tight text-center mb-10 text-white">
+            <h1 className="block text-5xl tracking-wide leading-none font-extrabold tracking-tight text-center mb-10 text-white">
               Mobsters <span className="text-red-500">Story</span>
             </h1>
             <p className="block text-3xl sm:text-2xl tracking-normal leading-none font-extrabold tracking-tight text-center mb-10 text-white">

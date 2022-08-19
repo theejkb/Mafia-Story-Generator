@@ -27,13 +27,13 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
     nftOwner[61];
 
   return (
-    <div className="rounded overflow-hidden	 relative bg-gradient-to-r from-primary-700 to-primary-800">
+    <div className="rounded overflow-hidden	relative bg-gradient-to-r from-primary-700 to-primary-800">
       <img
         alt="background bloody"
         src="/assets/img/pattern-blood.png"
         width="100%"
         height="100%"
-        className="absolute z-10"
+        className="absolute z-10 img-bloody"
       />
       <div
         className="pt-5 z-10 flex justify-evenly"
