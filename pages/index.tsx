@@ -76,7 +76,7 @@ const Home: NextPage = () => {
       </Head>
 
       <video
-        src="/assets/videos/particles-loop.mp4"
+        src="/assets/videos/particles-loop.webm"
         loop
         autoPlay
         playsInline
