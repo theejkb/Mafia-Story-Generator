@@ -80,6 +80,7 @@ const Home: NextPage = () => {
         loop
         autoPlay
         playsInline
+        muted
         className="homeParticles"
       ></video>
       <Container>
