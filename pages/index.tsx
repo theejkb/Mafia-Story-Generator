@@ -1,17 +1,21 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import NFTInfo from '../components/NFTInfo';
 import Screenshotable from '../components/Screenshotable';
 import Container from '../components/_Layout/Container';
-import { useEditor } from '../hooks/useEditor';
 import { NFT } from '../types';
 
 const Home: NextPage = () => {
   const [selectedMafiaId, setselectedMafiaId] = useState<string>('117');
   const [selectedMafia, setselectedMafia] = useState<NFT | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [background, setBackground] = useState('none');
+
+  type HTMLElementEvent<T extends HTMLElement> = Event & {
+    target: T;
+  };
 
   const fetchMafia = () => {
     fetch(
@@ -37,13 +41,7 @@ const Home: NextPage = () => {
       });
   };
 
-  useEffect(() => {
-    fetchMafia();
-  }, []);
-
-  const [background, setBackground] = useState('none');
-
-  const setBg = (event: ChangeEvent<HTMLInputElement>) => {
+  const setBg = (event: HTMLElementEvent<HTMLTextAreaElement>) => {
     setBackground(event.target.value);
     console.log(event.target.value);
   };
@@ -53,6 +51,10 @@ const Home: NextPage = () => {
     setLoading(true);
     fetchMafia();
   };
+
+  useEffect(() => {
+    fetchMafia();
+  }, []);
 
   return (
     <>
