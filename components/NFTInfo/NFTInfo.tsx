@@ -14,7 +14,6 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft, background }) => {
   const myLoader = () => {
     return `${nft.url}`;
   };
-  console.log(background);
 
   const nftOwner = nft.owner.split('');
   const nftOwnerReduced =

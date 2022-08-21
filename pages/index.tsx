@@ -40,7 +40,6 @@ const Home: NextPage = () => {
   const setBg = (event: React.FormEvent<HTMLDivElement>) => {
     const target = event.target as HTMLTextAreaElement;
     setBackground(target.value);
-    console.log(target.value);
   };
 
   const handleSubmitMafia = (e: React.FormEvent) => {
