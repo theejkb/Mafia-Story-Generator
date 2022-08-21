@@ -9,15 +9,6 @@ import { useEditor } from '../hooks/useEditor';
 import { NFT } from '../types';
 
 const Home: NextPage = () => {
-  const {
-    backgroundColor,
-    setBackgroundColor,
-    primaryColor,
-    setPrimaryColor,
-    secondaryColor,
-    setSecondaryColor,
-  } = useEditor();
-
   const [selectedMafiaId, setselectedMafiaId] = useState<string>('117');
   const [selectedMafia, setselectedMafia] = useState<NFT | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -52,7 +43,7 @@ const Home: NextPage = () => {
 
   const [background, setBackground] = useState('none');
 
-  const setBg = (event: ChangeEvent<HTMLDivElement>) => {
+  const setBg = (event: ChangeEvent<HTMLInputElement>) => {
     setBackground(event.target.value);
     console.log(event.target.value);
   };
@@ -135,17 +126,17 @@ const Home: NextPage = () => {
                         <input
                           className="ml-5"
                           type="radio"
-                          value="blood"
+                          value="Blood"
                           name="background"
                         />{' '}
-                        Bloody
+                        Blood
                         <input
                           className="ml-5"
                           type="radio"
-                          value="electrical"
+                          value="Smoke"
                           name="background"
                         />{' '}
-                        Electrical
+                        Smoke
                       </div>
                     </div>
                   </div>

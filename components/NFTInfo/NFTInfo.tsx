@@ -31,7 +31,7 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft, background }) => {
 
   return (
     <div className="rounded overflow-hidden	relative bg-gradient-to-r from-primary-700 to-primary-800">
-      {background === 'blood' && (
+      {background === 'Blood' && (
         <img
           alt="background bloody"
           src="/assets/img/pattern-blood.png"
@@ -40,9 +40,9 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft, background }) => {
           className="absolute z-10 img-bloody"
         />
       )}
-      {background === 'electrical' && (
+      {background === 'Smoke' && (
         <img
-          alt="background bloody"
+          alt="background smoke"
           src="/assets/img/pattern-smoke.webp"
           width="100%"
           height="100%"
