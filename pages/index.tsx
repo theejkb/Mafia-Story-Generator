@@ -1,16 +1,12 @@
-import Container from '../components/_Layout/Container';
-import Head from 'next/head';
-import NFTInfo from '../components/NFTInfo';
-import React, { createRef, useEffect, useState } from 'react';
-import Screenshotable from '../components/Screenshotable';
-import { NFT } from '../types';
-import { useEditor } from '../hooks/useEditor';
 import type { NextPage } from 'next';
-import Select from 'react-select';
-import Hat from '../public/assets/img/hat_fp.png';
-import { Carousel } from 'react-responsive-carousel';
+import Head from 'next/head';
+import React, { useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Background } from '../components/NFTInfo/NFTInfo';
+import NFTInfo from '../components/NFTInfo';
+import Screenshotable from '../components/Screenshotable';
+import Container from '../components/_Layout/Container';
+import { useEditor } from '../hooks/useEditor';
+import { NFT } from '../types';
 
 const Home: NextPage = () => {
   const {
