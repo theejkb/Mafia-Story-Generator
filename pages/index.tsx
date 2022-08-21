@@ -13,10 +13,6 @@ const Home: NextPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [background, setBackground] = useState('none');
 
-  type HTMLElementEvent<T extends HTMLElement> = Event & {
-    target: T;
-  };
-
   const fetchMafia = () => {
     fetch(
       `https://api.elrond.com/collections/MAFIA-bd0abc/nfts?name=${selectedMafiaId}&withOwner=true`,
@@ -41,9 +37,10 @@ const Home: NextPage = () => {
       });
   };
 
-  const setBg = (event: HTMLElementEvent<HTMLTextAreaElement>) => {
-    setBackground(event.target.value);
-    console.log(event.target.value);
+  const setBg = (event: React.FormEvent<HTMLDivElement>) => {
+    const target = event.target as HTMLTextAreaElement;
+    setBackground(target.value);
+    console.log(target.value);
   };
 
   const handleSubmitMafia = (e: React.FormEvent) => {
