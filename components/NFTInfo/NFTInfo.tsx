@@ -6,14 +6,15 @@ import { useState } from 'react';
 
 type NFTInfoProps = {
   nft: NFT;
+  background: String;
 };
 
-const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
+const NFTInfo: React.FC<NFTInfoProps> = ({ nft, background }) => {
   const { backgroundColor, primaryColor, secondaryColor } = useEditor();
   const myLoader = () => {
     return `${nft.url}`;
   };
-  console.log(nft);
+  console.log(background);
 
   const nftOwner = nft.owner.split('');
   const nftOwnerReduced =
@@ -37,6 +38,15 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
           width="100%"
           height="100%"
           className="absolute z-10 img-bloody"
+        />
+      )}
+      {background === 'electrical' && (
+        <img
+          alt="background bloody"
+          src="/assets/img/pattern-smoke.webp"
+          width="100%"
+          height="100%"
+          className="absolute bottom-0 z-10"
         />
       )}
       <div
@@ -76,25 +86,3 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft }) => {
   );
 };
 export default NFTInfo;
-
-export const Background = () => {
-  const [background, setBackground] = useState('none');
-
-  const setBg = (event) => {
-    setBackground(event?.target?.value);
-  };
-
-  return (
-    <div onChange={(event) => setBg(event)}>
-      <input
-        className="text-white"
-        type="radio"
-        value="none"
-        defaultChecked
-        name="background"
-      />{' '}
-      None
-      <input type="radio" value="blood" name="background" /> Bloody
-    </div>
-  );
-};

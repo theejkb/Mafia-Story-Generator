@@ -54,6 +54,13 @@ const Home: NextPage = () => {
     fetchMafia();
   }, []);
 
+  const [background, setBackground] = useState('none');
+
+  const setBg = (event) => {
+    setBackground(event?.target?.value);
+    console.log(event?.target?.value);
+  };
+
   const handleSubmitMafia = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -98,7 +105,7 @@ const Home: NextPage = () => {
             <div className="grid grid-cols-1">
               <div className="col-span-1">
                 <div className="flex justify-center mb-5">
-                  <div className="flex flex-row justify-around w-full items-start gap-4">
+                  <div className="flex flex-row justify-around w-full items-center gap-4 flex-col sm:flex-row	">
                     <form onSubmit={handleSubmitMafia}>
                       <label className="block text-white text-center ">
                         Search by Id (example with #117)
@@ -116,12 +123,40 @@ const Home: NextPage = () => {
                         {loading ? 'Loading...' : 'Search'}
                       </button>
                     </form>
-                    <Background />
+                    <div>
+                      <h5 className="text-white text-xl">Background</h5>
+                      <div
+                        className="text-white"
+                        onChange={(event) => setBg(event)}
+                      >
+                        <input
+                          type="radio"
+                          value="none"
+                          defaultChecked
+                          name="background"
+                        />{' '}
+                        None
+                        <input
+                          className="ml-5"
+                          type="radio"
+                          value="blood"
+                          name="background"
+                        />{' '}
+                        Bloody
+                        <input
+                          className="ml-5"
+                          type="radio"
+                          value="electrical"
+                          name="background"
+                        />{' '}
+                        Electrical
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div>
                   <Screenshotable>
-                    <NFTInfo nft={selectedMafia} />
+                    <NFTInfo nft={selectedMafia} background={background} />
                   </Screenshotable>
                 </div>
               </div>
