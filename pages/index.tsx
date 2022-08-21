@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import NFTInfo from '../components/NFTInfo';
 import Screenshotable from '../components/Screenshotable';
@@ -52,9 +52,9 @@ const Home: NextPage = () => {
 
   const [background, setBackground] = useState('none');
 
-  const setBg = (event) => {
-    setBackground(event?.target?.value);
-    console.log(event?.target?.value);
+  const setBg = (event: ChangeEvent<HTMLDivElement>) => {
+    setBackground(event.target.value);
+    console.log(event.target.value);
   };
 
   const handleSubmitMafia = (e: React.FormEvent) => {
