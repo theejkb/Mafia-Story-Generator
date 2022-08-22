@@ -42,7 +42,7 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft, background }) => {
       {background === 'Smoke' && (
         <img
           alt="background smoke"
-          src="/assets/img/pattern-smoke.webp"
+          src="/assets/img/pattern-smoke.png"
           width="100%"
           height="100%"
           className="absolute bottom-0 z-10"
