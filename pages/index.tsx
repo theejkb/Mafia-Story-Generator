@@ -135,6 +135,13 @@ const Home: NextPage = () => {
                           name="background"
                         />{' '}
                         Smoke
+                        <input
+                          className="ml-5"
+                          type="radio"
+                          value="Abstract"
+                          name="background"
+                        />{' '}
+                        Abstract
                       </div>
                     </div>
                   </div>

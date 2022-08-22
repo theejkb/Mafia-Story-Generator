@@ -48,6 +48,15 @@ const NFTInfo: React.FC<NFTInfoProps> = ({ nft, background }) => {
           className="absolute bottom-0 z-10 opacity-40 h-full rotate-180 lg:translate-x-36	"
         />
       )}
+      {background === 'Abstract' && (
+        <img
+          alt="background smoke"
+          src="/assets/img/abstract.webp"
+          width="100%"
+          height="100%"
+          className="absolute bottom-0 z-10 opacity-40 h-full"
+        />
+      )}
       <div
         className="pt-5 z-10 flex justify-evenly"
         style={{ color: secondaryColor }}
