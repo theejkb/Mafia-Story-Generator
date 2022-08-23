@@ -2,9 +2,8 @@
 ![Capture d’écran 2022-07-28 à 10 18 20](https://user-images.githubusercontent.com/45352533/181517989-ec0a72fc-a253-4d9e-91f8-26c9132472bd.png)
 
 ```bash
+npm i
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
