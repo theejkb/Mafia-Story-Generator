@@ -58,7 +58,7 @@ const NFTInfo: React.FC<NFTInfoProps> = ({nft, background}) => {
                         alt="Mobsters Image"
                         width={400}
                         height={400}
-                        src={nft.media[0].thumbnailUrl}
+                        src={nft.media[0].originalUrl}
                         className="rounded-md z-20"
                         priority
                         unoptimized
