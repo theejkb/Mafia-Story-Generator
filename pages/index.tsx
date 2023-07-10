@@ -8,14 +8,17 @@ import Container from '../components/_Layout/Container';
 import { NFT } from '../types';
 
 const Home: NextPage = () => {
-  const [selectedMafiaId, setselectedMafiaId] = useState<string>('117');
+  const [selectedMafiaId, setselectedMafiaId] = useState<number>(117);
   const [selectedMafia, setselectedMafia] = useState<NFT | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [background, setBackground] = useState('none');
 
+  const base_url = 'https://api.multiversx.com';
+  const collection = 'MAFIA-bd0abc'
+  const endpoint = `${base_url}/collections/${collection}/nfts?identifiers=&nonceBefore=${selectedMafiaId}&nonceAfter=${selectedMafiaId}`
   const fetchMafia = () => {
     fetch(
-      `https://api.elrond.com/collections/MAFIA-bd0abc/nfts?name=${selectedMafiaId}&withOwner=true`,
+        endpoint,
       {
         method: 'GET',
       }
@@ -91,19 +94,20 @@ const Home: NextPage = () => {
               <div className="col-span-1">
                 <div className="flex justify-center mb-5">
                   <div className="flex flex-row justify-around w-full items-center gap-4 flex-col sm:flex-row	">
-                    <form onSubmit={handleSubmitMafia}>
+                    <form>
                       <label className="block text-white text-center ">
                         Search by Id (example with #117)
                       </label>
                       <input
                         className="px-2 py-1 rounded-l outline-none bg-white"
-                        type={'text'}
+                        type='number'
                         value={selectedMafiaId}
-                        onChange={(e) => setselectedMafiaId(e.target.value)}
+                        onChange={(e) => setselectedMafiaId(parseInt(e.target.value))}
                       ></input>
                       <button
                         className="px-2 py-1 rounded-r bg-red-500 text-white"
                         type="submit"
+                        onClick={handleSubmitMafia}
                       >
                         {loading ? 'Loading...' : 'Search'}
                       </button>
@@ -155,7 +159,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         ) : (
-          <p className="text-white py-4">Loading...</p>
+          <p className="text-white text-center py-4">Loading...</p>
         )}
       </Container>
     </>

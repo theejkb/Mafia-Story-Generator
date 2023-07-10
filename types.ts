@@ -32,6 +32,7 @@ export interface NFT {
   collection: string;
   timestamp: number;
   attributes: string;
+  rank: number
   nonce: number;
   type: string;
   name: string;
@@ -43,7 +44,6 @@ export interface NFT {
   isWhitelistedStorage: boolean;
   tags: string[];
   metadata: Metadata;
-  owner: string;
   supply: string;
   ticker: string;
 }
