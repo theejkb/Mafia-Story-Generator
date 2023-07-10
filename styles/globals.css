@@ -6,7 +6,7 @@
 input,
 textarea {
     background-color: transparent;
-    border          : transparent;
+    border: transparent;
 }
 
 @media screen and (max-width: 1023px) {
@@ -16,10 +16,14 @@ textarea {
 }
 
 .homeParticles {
-    z-index       : 1;
-    min-width     : 98vw;
-    min-height    : 100vh;
-    object-fit    : cover;
+    z-index: 1;
+    min-width: 98vw;
+    min-height: 100vh;
+    object-fit: cover;
     mix-blend-mode: screen;
-    position      : absolute;
+    position: absolute;
+}
+
+.tweet {
+    background-color: rgb(29, 155, 240);
 }
