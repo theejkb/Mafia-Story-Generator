@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import NFTInfo from '../components/NFTInfo';
 import Screenshotable from '../components/Screenshotable';
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
   const endpoint = `${base_url}/collections/${collection}/nfts?identifiers=&nonceBefore=${selectedMafiaId}&nonceAfter=${selectedMafiaId}`
   const fetchMafia = () => {
     fetch(
-        endpoint,
+      endpoint,
       {
         method: 'GET',
       }
@@ -55,6 +55,7 @@ const Home: NextPage = () => {
     fetchMafia();
   }, []);
 
+
   return (
     <>
       <Head>
@@ -79,15 +80,16 @@ const Home: NextPage = () => {
         muted
         className="homeParticles"
       ></video>
+
       <Container>
         {selectedMafia ? (
           <div className="my-8 z-10 relative">
             <h1 className="block text-5xl tracking-wide leading-none font-extrabold tracking-tight text-center mb-10 text-white">
-              Mobsters <span className="text-red-500">Story</span>
+              Mafia <span className="text-red-500">Story</span>
             </h1>
-            <p className="block text-3xl sm:text-2xl tracking-normal leading-none font-extrabold tracking-tight text-center mb-10 text-white">
-              Enter his <span className="text-red-500">name</span>. Create his{' '}
-              <span className="text-red-500">story</span>. Share with the{' '}
+            <p className="block text-xl sm:text-2xl tracking-normal leading-none font-extrabold tracking-tight text-center mb-10 text-white">
+              Enter your <span className="text-red-500 mr-2">NFT.</span>{' '} Create his{' '}
+              <span className="text-red-500 mr-2">story.</span>Share with the{' '}
               <span className="text-red-500">community.</span>
             </p>
             <div className="grid grid-cols-1">
