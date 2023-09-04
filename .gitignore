@@ -35,3 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 
 .idea/workspace.xml
+
+# file: ~/.gitignore_global
+.idea
