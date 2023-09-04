@@ -10,10 +10,20 @@ type NFTInfoProps = {
 };
 
 const NFTInfo: React.FC<NFTInfoProps> = ({nft, background}) => {
+    const [nftName, setNftName] = useState('');
+
     const {backgroundColor, primaryColor, secondaryColor} = useEditor();
     const myLoader = () => {
         return `${nft.url}`;
     };
+
+    function checkAnswer(event: React.KeyboardEvent<HTMLInputElement>) {
+        // console.log(value)
+        console.log(event.target)
+        if (event.key === "Enter") {
+            console.log("Enter key was pressed");
+        }
+    }
 
     return (
         <div className="rounded overflow-hidden	relative bg-gradient-to-r from-primary-700 to-primary-800">
@@ -53,22 +63,21 @@ const NFTInfo: React.FC<NFTInfoProps> = ({nft, background}) => {
             </div>
             <div className="flex z-10 flex-start lg:flex-row flex-col h-full p-10 pt-5 items-center">
                 <div className="col-span-12 flex-col lg:col-span-6 flex items-center min-w-fit">
-                    <Image
-                        loader={myLoader}
-                        alt="Mobsters Image"
-                        width={400}
-                        height={400}
-                        src={nft.media[0].originalUrl}
-                        className="rounded-md z-20"
-                        priority
-                        unoptimized
-                    />
+                    <div className="heading-frame"
+                         style={{
+                             background: `url(${nft.media[0].originalUrl}) center`,
+                         }}>
+                        <h2>{nftName}</h2>
+                    </div>
                 </div>
                 <div className="flex flex-col h-full lg:pl-10 lg:pr-10 pt-5 w-full lg:pt-0">
                     <input
                         placeholder="Enter his name"
                         className="z-20 text-center block font-bold text-5xl border border-transparent hover:border-white w-full ease-in duration-300 mb-5 rounded-md hover:border-1 hover:border-gray-50"
                         style={{color: primaryColor}}
+                        value={nftName}
+                        onChange={e => { setNftName(e.currentTarget.value); }}
+                        onKeyUp={(event) => {checkAnswer(event)}}
                     ></input>
                     <textarea
                         placeholder="Enter his story"

@@ -59,14 +59,14 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Mobsters Story - Elrond Mafia</title>
-        <meta name="description" content="Mobster Story Generator" />
+        <title>The clan - STORY</title>
+        <meta name="description" content="The clan story Generator" />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:image" content="/assets/img/Mobsters_Story.png" />
-        <meta property="og:title" content="Mobsters Story" />
+        <meta property="og:title" content="The clan story" />
         <meta
           property="og:description"
-          content="An application to create your own Elrond Mafia Story."
+          content="THE CLAN STORY - Enter your NFT. Create his story. Share with your friends."
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -85,7 +85,7 @@ const Home: NextPage = () => {
         {selectedMafia ? (
           <div className="my-8 z-10 relative">
             <h1 className="block text-5xl tracking-wide leading-none font-extrabold tracking-tight text-center mb-10 text-white">
-              Mafia <span className="text-red-500">Story</span>
+              The CLAN <span className="text-red-500">Story</span>
             </h1>
             <p className="block text-xl sm:text-2xl tracking-normal leading-none font-extrabold tracking-tight text-center mb-10 text-white">
               Enter your <span className="text-red-500 mr-2">NFT.</span>{' '} Create his{' '}

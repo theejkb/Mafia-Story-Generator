@@ -19,7 +19,7 @@ const Footer: React.FC<FooterProps> = () => {
                                 rel="noreferrer"
                                 className="hover:text-red-500 duration-200 transition-colors ease-in-out"
                             >
-                                Elrond Mafia
+                                The CLAN
                             </a>{' '}
                             &copy; {new Date().getFullYear()}{' '}
                             <span className="font-bold"></span> Made with ❤️ by <a href='https://twitter.com/stevennaaq'
@@ -32,9 +32,9 @@ const Footer: React.FC<FooterProps> = () => {
                         <img
                             className="pr-1"
                             width={25}
-                            alt="Elrond Logo"
+                            alt="MultiversX Logo"
                             height={25}
-                            src="/assets/img/egld-logo.svg"
+                            src="/assets/img/multiversx-egld-egld-logo.svg"
                         />
                         Donation:
                         <a
